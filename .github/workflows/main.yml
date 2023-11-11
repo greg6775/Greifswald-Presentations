@@ -1,0 +1,57 @@
+name: Updater
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Update
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3.0.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout
+        uses: actions/checkout@v4.1.0
+
+      - name: Install Deno
+        uses: denoland/setup-deno@v1.1.3
+        with:
+          deno-version: v1.x
+
+      - name: Build Website
+        run: |
+            cd website/
+            deno run -A serve.ts build
+            mv dist ../server/ || exit 1
+
+      - name: Build and push
+        uses: docker/build-push-action@v5.0.0
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/gregtcltk/greifswald-presentations
+          labels: |
+            org.opencontainers.image.source="https://github.com/GregTCLTK/Greifswald-Presentations"
+
+      - name: Set up Kubectl
+        run: |
+            curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+            chmod +x kubectl
+            sudo mv kubectl /usr/local/bin/
+
+      - name: Configure Kubernetes credentials
+        env:
+          KUBECONFIG_DATA: ${{ secrets.KUBE_CREDENTIALS }}
+        run: |
+            echo "$KUBECONFIG_DATA" | base64 --decode > kubeconfig.yaml
+
+      - name: Restart Rollout
+        run: |
+            kubectl rollout restart deployment greifswald -n private --kubeconfig=kubeconfig.yaml

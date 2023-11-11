@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "dom.asynciterable",
+      "deno.ns",
+      "deno.unstable"
+    ]
+  },
+  "lock": false,
+  "imports": {
+    "webgen/": "https://raw.githubusercontent.com/lucsoft/WebGen/a23b2fb/",
+    "std/": "https://deno.land/std@0.206.0/",
+    "mongo/": "https://raw.githubusercontent.com/denodrivers/mongo/d22d88/",
+    "shared/": "https://raw.githubusercontent.com/BBN-Holding/bbn.one/2d38ec3/pages/shared/"
+  },
+  "tasks": {
+    "start": "cd ./server && deno run -A --unstable app.ts"
+  }
+}
