@@ -1,7 +1,7 @@
 import { DropDownInput, Grid, Page, TextInput, Vertical, View, WebGen, Wizard } from "webgen/mod.ts";
 import presentations from "../presentations.json" assert { type: "json" };
 import topics from "../topics.json" assert { type: "json" };
-import zod from "https://deno.land/x/zod@v3.22.2/index.ts";
+import zod from "https://deno.land/x/zod@v3.22.4/index.ts";
 
 WebGen();
 

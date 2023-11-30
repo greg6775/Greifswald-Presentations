@@ -1,6 +1,6 @@
 import { serveDir } from "std/http/file_server.ts";
 import { MongoClient } from "mongo/mod.ts";
-import zod from "https://deno.land/x/zod@v3.22.2/index.ts";
+import zod from "https://deno.land/x/zod@v3.22.4/index.ts";
 
 const client = new MongoClient();
 
