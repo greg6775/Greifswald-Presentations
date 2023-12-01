@@ -16,6 +16,7 @@
     "shared/": "https://raw.githubusercontent.com/BBN-Holding/bbn.one/2d38ec3/pages/shared/"
   },
   "tasks": {
-    "start": "cd ./server && deno run -A --unstable app.ts"
+    "start": "cd ./server && deno run -A --unstable app.ts",
+    "stabledb": "ssh -NL 27017:0.0.0.0:27017 bbn"
   }
 }
