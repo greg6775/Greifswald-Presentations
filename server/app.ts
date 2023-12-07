@@ -21,13 +21,13 @@ await Deno.serve({ port: 8080 }, async (req) => {
         }).parse(JSON.parse(body));
 
         //count submissions
-        if ((await db.collection("submissions").find({ p1: data.p1 }).toArray()).length > 20)
+        if ((await db.collection("submissions").find({ p1: data.p1 }).toArray()).length > 14)
             return new Response("Vortrag 1 ist schon voll", { status: 400 });
-        if ((await db.collection("submissions").find({ p2: data.p2 }).toArray()).length > 20)
+        if ((await db.collection("submissions").find({ p2: data.p2 }).toArray()).length > 14)
             return new Response("Vortrag 2 ist schon voll", { status: 400 });
-        if ((await db.collection("submissions").find({ p3: data.p3 }).toArray()).length > 20)
+        if ((await db.collection("submissions").find({ p3: data.p3 }).toArray()).length > 14)
             return new Response("Vortrag 3 ist schon voll", { status: 400 });
-        if ((await db.collection("submissions").find({ p4: data.p4 }).toArray()).length > 20)
+        if ((await db.collection("submissions").find({ p4: data.p4 }).toArray()).length > 14)
             return new Response("Vortrag 4 ist schon voll", { status: 400 });
 
         const collection = db.collection("submissions");
