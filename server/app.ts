@@ -31,7 +31,9 @@ await Deno.serve({ port: 8080 }, async (req) => {
             return new Response("Vortrag 4 ist schon voll", { status: 400 });
 
         const collection = db.collection("submissions");
-        await collection.insertOne(data);
+        await collection.updateOne({ name: data.name }, {
+            $set: data
+        }, { upsert: true });
         return new Response()
     }
     return serveDir(req, {
