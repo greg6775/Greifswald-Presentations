@@ -18,6 +18,7 @@ document.adoptedStyleSheets.push(css`
 `)
 
 const validation = zod.object({
+    name: zod.string(),
     p1: zod.string({ invalid_type_error: "Vortrag 1 fehlt" }),
     p2: zod.string({ invalid_type_error: "Vortrag 2 fehlt" }),
     p3: zod.string({ invalid_type_error: "Vortrag 3 fehlt" }),
@@ -46,7 +47,7 @@ const sheets = Sheets(Content(Vertical(
             return alert(JSON.parse(data.error.message).map((x: any) => x.message))
         const req = await fetch("/submit", {
             method: "POST",
-            body: JSON.stringify(data)
+            body: JSON.stringify(data.data)
         });
 
         if (req.status != 200)
