@@ -1,21 +1,22 @@
 {
-  "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "dom.asynciterable",
-      "deno.ns",
-      "deno.unstable"
-    ]
-  },
-  "lock": false,
-  "imports": {
-    "webgen/": "https://raw.githubusercontent.com/lucsoft/WebGen/350de2e/",
-    "std/": "https://deno.land/std@0.208.0/",
-    "mongo/": "https://raw.githubusercontent.com/denodrivers/mongo/d22d88/"
-  },
-  "tasks": {
-    "start": "cd ./server && deno run -A --unstable app.ts",
-    "stabledb": "ssh -NL 27017:0.0.0.0:27017 bbn"
-  }
+    "compilerOptions": {
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "dom.asynciterable",
+            "deno.ns",
+            "deno.unstable"
+        ]
+    },
+    "lock": false,
+    "imports": {
+        "@std/encoding": "jsr:@std/encoding@^1.0.5",
+        "@std/http": "jsr:@std/http@^1.0.11",
+        "webgen/": "https://raw.githubusercontent.com/lucsoft/WebGen/feb5f33/",
+        "mongo/": "https://raw.githubusercontent.com/denodrivers/mongo/b60fcca/"
+    },
+    "tasks": {
+        "start": "cd ./server && deno run -A app.ts",
+        "stabledb": "ssh -NL 27017:0.0.0.0:27017 prv-fsn"
+    }
 }

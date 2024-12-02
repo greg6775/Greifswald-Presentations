@@ -36,22 +36,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/gregtcltk/greifswald-presentations
+          tags: ghcr.io/greg6775/greifswald-presentations
           labels: |
-            org.opencontainers.image.source="https://github.com/GregTCLTK/Greifswald-Presentations"
-
-      - name: Set up Kubectl
-        run: |
-            curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-            chmod +x kubectl
-            sudo mv kubectl /usr/local/bin/
-
-      - name: Configure Kubernetes credentials
-        env:
-          KUBECONFIG_DATA: ${{ secrets.KUBE_CREDENTIALS }}
-        run: |
-            echo "$KUBECONFIG_DATA" | base64 --decode > kubeconfig.yaml
-
-      - name: Restart Rollout
-        run: |
-            kubectl rollout restart deployment greifswald -n private --kubeconfig=kubeconfig.yaml
+            org.opencontainers.image.source="https://github.com/Greg6775/Greifswald-Presentations"

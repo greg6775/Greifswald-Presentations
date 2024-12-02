@@ -1,0 +1,214 @@
+{
+    "14.00": [
+        {
+            "title": "Kernspaltung und Kernfusion",
+            "description": "Der Unterschied zwischen Kernspaltung und Kernfusion: Physikalische Grundlagen und Energiepotenzial",
+            "room": "2.17",
+            "id": 1
+        },
+        {
+            "title": "Kernfusion – Energiequelle der Zukunft?",
+            "description": "Wie funktioniert Kernfusion und ist es die Energiequelle der Zukunft?",
+            "room": "2.08",
+            "id": 2
+        },
+        {
+            "title": "Kernspaltung",
+            "description": "Prinzip und Ablauf der Kernspaltung",
+            "room": "2.07",
+            "id": 3
+        },
+        {
+            "title": "Kernspaltung und Kernfusion",
+            "description": "Der Unterschied zwischen Kernspaltung und Kernfusion: Physikalische Grundlagen und Energiepotenzial",
+            "room": "2.12",
+            "id": 4
+        },
+        {
+            "title": "Raketentechnologie unter dem NS-Regime",
+            "description": "Peenemünde als Geburtsstätte der Raketentechnologie: Technischer Fortschritt unter dem NS-Regime",
+            "room": "2.18",
+            "id": 5
+        },
+        {
+            "title": "Peenemünde, Kohlekraftwerk, Wandel",
+            "description": "Vom Raketenversuchsgelände zum Kohlekraftwerk: Der Wandel Peenemündes im 20. Jahrhundert",
+            "room": "2.16",
+            "id": 6
+        },
+        {
+            "title": "Radioaktive Strahlung in der Energiegewinnung: Sicherheitsaspekte und Katastrophen",
+            "description": "Vorstellung der Radioaktive Strahlung bei der Energiegewinnung und die Katastrophen (Fukushima & Tschernobyl)",
+            "room": "2.15",
+            "id": 7
+        },
+        {
+            "title": "Das Kohlekraftwerk Peenemünde: Geschichte und Bedeutung für die regionale Energieversorgung",
+            "description": "",
+            "room": "2.19",
+            "id": 8
+        }
+    ],
+    "14.30": [
+        {
+            "title": "Kernspaltung und Kernfusion",
+            "description": "Der Unterschied zwischen Kernspaltung und Kernfusion: Physikalische Grundlagen und Energiepotenzial",
+            "room": "2.17",
+            "id": 9
+        },
+        {
+            "title": "Kernfusion – Energiequelle der Zukunft?",
+            "description": "Wie funktioniert Kernfusion und ist es die Energiequelle der Zukunft?",
+            "room": "2.08",
+            "id": 10
+        },
+        {
+            "title": "Kernspaltung",
+            "description": "Prinzip und Ablauf der Kernspaltung",
+            "room": "2.07",
+            "id": 11
+        },
+        {
+            "title": "Kernspaltung und Kernfusion",
+            "description": "Der Unterschied zwischen Kernspaltung und Kernfusion: Physikalische Grundlagen und Energiepotenzial",
+            "room": "2.12",
+            "id": 12
+        },
+        {
+            "title": "Raketentechnologie unter dem NS-Regime",
+            "description": "Peenemünde als Geburtsstätte der Raketentechnologie: Technischer Fortschritt unter dem NS-Regime",
+            "room": "2.18",
+            "id": 13
+        },
+        {
+            "title": "Peenemünde, Kohlekraftwerk, Wandel",
+            "description": "Vom Raketenversuchsgelände zum Kohlekraftwerk: Der Wandel Peenemündes im 20. Jahrhundert",
+            "room": "2.16",
+            "id": 14
+        },
+        {
+            "title": "Strahlung und Auswirkung auf die Umwelt",
+            "description": "Differenzierte Betrachtung der Auswirkungen des Kernkraftwerkes Lubmin",
+            "room": "2.14",
+            "id": 15
+        },
+        {
+            "title": "Radioaktive Strahlung in der Energiegewinnung: Sicherheitsaspekte und Katastrophen",
+            "description": "Vorstellung der Radioaktive Strahlung bei der Energiegewinnung und die Katastrophen (Fukushima & Tschernobyl)",
+            "room": "2.15",
+            "id": 16
+        },
+        {
+            "title": "Das Kohlekraftwerk Peenemünde: Geschichte und Bedeutung für die regionale Energieversorgung",
+            "description": "",
+            "room": "2.19",
+            "id": 17
+        }
+    ],
+    "15.00": [
+        {
+            "title": "Raketentechnik unter dem NS-Regime",
+            "description": "Peenemünde als Geburtsstätte der Raketentechnologie: Technischer Fortschritt unter dem NS-Regime",
+            "room": "2.17",
+            "id": 18
+        },
+        {
+            "title": "Die Wirkung ionisierender Strahlung auf den menschlichen Körper: Nutzen und Risiken",
+            "description": "Was ist ionisierende Strahlung? Wie wirkt sie auf den menschlichen Körper? Wir diskutieren ihren Nutzen und die Risiken, die sie birgt.",
+            "room": "2.08",
+            "id": 19
+        },
+        {
+            "title": "Kernfusion, Chancen und Herausforderungen für die Zukunft",
+            "description": "Vorstellung verschiedener Fusions-Technologien sowie Einordnung in die Zukunft",
+            "room": "2.14",
+            "id": 20
+        },
+        {
+            "title": "Strahlung und Auswirkung auf die Umwelt",
+            "description": "Differenzierte Betrachtung der Auswirkungen des Kernkraftwerkes Lubmin",
+            "room": "2.14",
+            "id": 21
+        },
+        {
+            "title": "Die Wirkung ionisierender Strahlung auf den menschlichen Körper: Nutzen und Risiken",
+            "description": "Grundlagen ionisierender Strahlung. Auswirkung auf den menschlichen Körper. Risiken sowie Nutzen in der Medizin.",
+            "room": "2.12",
+            "id": 22
+        },
+        {
+            "title": "Die Risiken der Kernenergie",
+            "description": "Vorstellung von den Risiken der Kernenergie und Lehren aus Tschernobyl und Fukushima",
+            "room": "2.07",
+            "id": 23
+        },
+        {
+            "title": "Zwangsarbeit in Peenemünde während der NS-Zeit",
+            "description": "Die dunkle Seite des technischen Fortschritts: Ethische Fragen von Zwangsarbeit in Verbindung mit technischem Fortschritt",
+            "room": "2.18",
+            "id": 24
+        },
+        {
+            "title": "Strahlung, Sicherheit, Tschernobyl, Fukushima",
+            "description": "",
+            "room": "2.16",
+            "id": 25
+        },
+        {
+            "title": "Strahlung, Lubmin",
+            "description": "",
+            "room": "2.15",
+            "id": 26
+        }
+    ],
+    "15.30": [
+        {
+            "title": "Raketentechnik unter dem NS-Regime",
+            "description": "Peenemünde als Geburtsstätte der Raketentechnologie: Technischer Fortschritt unter dem NS-Regime",
+            "room": "2.17",
+            "id": 27
+        },
+        {
+            "title": "Die Wirkung ionisierender Strahlung auf den menschlichen Körper: Nutzen und Risiken",
+            "description": "Was ist ionisierende Strahlung? Wie wirkt sie auf den menschlichen Körper? Wir diskutieren ihren Nutzen und die Risiken, die sie birgt.",
+            "room": "2.08",
+            "id": 28
+        },
+        {
+            "title": "Kernfusion, Chancen und Herausforderungen für die Zukunft",
+            "description": "Vorstellung verschiedener Fusions-Technologien sowie Einordnung in die Zukunft",
+            "room": "2.14",
+            "id": 29
+        },
+        {
+            "title": "Die Wirkung ionisierender Strahlung auf den menschlichen Körper: Nutzen und Risiken",
+            "description": "Grundlagen ionisierender Strahlung. Auswirkung auf den menschlichen Körper. Risiken sowie Nutzen in der Medizin.",
+            "room": "2.12",
+            "id": 30
+        },
+        {
+            "title": "Die Risiken der Kernenergie",
+            "description": "Vorstellung von den Risiken der Kernenergie und Lehren aus Tschernobyl und Fukushima",
+            "room": "2.07",
+            "id": 31
+        },
+        {
+            "title": "Zwangsarbeit in Peenemünde während der NS-Zeit",
+            "description": "Die dunkle Seite des technischen Fortschritts: Ethische Fragen von Zwangsarbeit in Verbindung mit technischem Fortschritt",
+            "room": "2.18",
+            "id": 32
+        },
+        {
+            "title": "Strahlung, Sicherheit, Tschernobyl, Fukushima",
+            "description": "",
+            "room": "2.16",
+            "id": 33
+        },
+        {
+            "title": "Strahlung, Lubmin",
+            "description": "",
+            "room": "2.15",
+            "id": 34
+        }
+    ]
+}
