@@ -6,7 +6,7 @@ import { decodeBase64 } from "@std/encoding";
 
 const state = asRefRecord({
     name: undefined,
-    presentations: [],
+    presentations: <object[]>[],
     p1: undefined,
     p2: undefined,
     p3: undefined,
@@ -14,10 +14,6 @@ const state = asRefRecord({
 })
 
 const sheets = Sheets()
-
-sheets
-    .setMinWidth("20rem")
-    .setHeight("min(calc(100% - 15px), 20rem)");
 
 async function loadData() {
     await fetch("/presentations")
