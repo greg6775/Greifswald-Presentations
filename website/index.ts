@@ -62,8 +62,8 @@ appendBody(
                 Grid(
                     Label(ref`Name: ${state.name}`),
                     DropDown((state.presentations.value)[ "14.00" ].map(x => x.id), state.p1, "Vortrag 1 (14:00 - 14:20)").setValueRender(key => state.presentations.value[ "14.00" ].find(x => x.id == key)!.title),
-                    DropDown((state.presentations.value)[ "14.30" ].map(x => x.id), state.p2, "Vortrag 2 (14:30 - 15:00)").setValueRender(key => state.presentations.value[ "14.30" ].find(x => x.id == key)!.title),
-                    DropDown((state.presentations.value)[ "15.00" ].map(x => x.id), state.p3, "Vortrag 3 (15:10 - 15:20)").setValueRender(key => state.presentations.value[ "15.00" ].find(x => x.id == key)!.title),
+                    DropDown((state.presentations.value)[ "14.30" ].map(x => x.id), state.p2, "Vortrag 2 (14:30 - 14:50)").setValueRender(key => state.presentations.value[ "14.30" ].find(x => x.id == key)!.title),
+                    DropDown((state.presentations.value)[ "15.00" ].map(x => x.id), state.p3, "Vortrag 3 (15:00 - 15:20)").setValueRender(key => state.presentations.value[ "15.00" ].find(x => x.id == key)!.title),
                     DropDown((state.presentations.value)[ "15.30" ].map(x => x.id), state.p4, "Vortrag 4 (15:30 - 15:50)").setValueRender(key => state.presentations.value[ "15.30" ].find(x => x.id == key)!.title),
                 ).setGap("20px").setMargin("20px 0px")
             ),
