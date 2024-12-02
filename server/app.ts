@@ -9,7 +9,7 @@ await client.connect("mongo://mongo:27017");
 
 const db = client.database("mcb_greifswald");
 
-Deno.serve({ port: 8080 }, async (req) => {
+await Deno.serve({ port: 8080 }, async (req) => {
     const url = new URL(req.url)
     if (url.pathname == "/presentations") {
         const submissions = await db.collection("submissions").find().toArray();
@@ -17,7 +17,7 @@ Deno.serve({ port: 8080 }, async (req) => {
             time,
             presentations.filter(presentation => submissions.filter(submission => submission.p1 == presentation.id).length < 15)
         ]));
-        return new Response(JSON.stringify(result), { headers: { "content-type": "application/json", "Access-Control-Allow-Origin": "*" } });
+        return new Response(JSON.stringify(result), { headers: { "content-type": "application/json" } });
     } else if (url.pathname == "/submit" && req.method == "POST") {
         const body = new TextDecoder().decode(await req.arrayBuffer());
         const data = zod.object({
@@ -42,9 +42,9 @@ Deno.serve({ port: 8080 }, async (req) => {
         await collection.updateOne({ name: data.name }, {
             $set: data
         }, { upsert: true });
-        return new Response("", { headers: { "Access-Control-Allow-Origin": "*" } });
+        return new Response();
     }
     return serveDir(req, {
         fsRoot: "./dist",
     });
-})
+}).finished
