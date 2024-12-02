@@ -5,7 +5,7 @@ import presentations from "./presentations.json" with { type: "json" };
 
 const client = new MongoClient();
 
-await client.connect("mongo://localhost:27017");
+await client.connect("mongo://mongo:27017");
 
 const db = client.database("mcb_greifswald");
 
