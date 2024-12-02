@@ -1,4 +1,4 @@
-import { Image, Content, Grid, Label, Sheets, ref, asRefRecord, appendBody, WebGenTheme, DropDown, PrimaryButton, DialogContainer, Spinner } from "webgen/mod.ts";
+import { Image, Content, Grid, Label, Sheets, ref, asRefRecord, appendBody, WebGenTheme, DropDown, PrimaryButton, DialogContainer, Spinner, Box, Table, Empty, asRef } from "webgen/mod.ts";
 // @deno-types="https://raw.githubusercontent.com/lucsoft-DevTeam/lucsoft.de/master/custom.d.ts"
 import microsoftLogo from './microsoftLogo.svg';
 import zod from "https://deno.land/x/zod@v3.23.8/index.ts";
@@ -6,6 +6,7 @@ import { decodeBase64 } from "@std/encoding";
 
 const state = asRefRecord({
     name: undefined,
+    selected: [],
     presentations: <object[]>[],
     p1: undefined,
     p2: undefined,
@@ -16,9 +17,19 @@ const state = asRefRecord({
 const sheets = Sheets()
 
 async function loadData() {
-    await fetch("/presentations")
+    await fetch("/init", {
+        method: "POST",
+        body: JSON.stringify({ name: state.name.value })
+    })
         .then(x => x.json())
-        .then(x => state.presentations.setValue(x))
+        .then(x => {
+            state.presentations.setValue(x.presentations)
+            state.selected.setValue(x.selected.map((x, i) => ({
+                title: x.title,
+                time: [ "14:00", "14:30", "15:00", "15:30" ][ i ],
+                room: x.room
+            })))
+        })
 }
 
 const validation = zod.object({
@@ -58,7 +69,8 @@ appendBody(
     WebGenTheme(
         DialogContainer(sheets.visible(), sheets).setShouldCloseItself(() => false),
         Content(
-            state.presentations.map(x => x.length == 0 ? Spinner() :
+            Label("Greifswald Vortragswahl").setTextSize("3xl").setFontWeight("bold").setJustifySelf("center"),
+            Box(state.presentations.map(x => x.length == 0 ? Spinner() :
                 Grid(
                     Label(ref`Name: ${state.name}`),
                     DropDown((state.presentations.value)[ "14.00" ].map(x => x.id), state.p1, "Vortrag 1 (14:00 - 14:20)").setValueRender(key => state.presentations.value[ "14.00" ].find(x => x.id == key)!.title),
@@ -66,7 +78,7 @@ appendBody(
                     DropDown((state.presentations.value)[ "15.00" ].map(x => x.id), state.p3, "Vortrag 3 (15:00 - 15:20)").setValueRender(key => state.presentations.value[ "15.00" ].find(x => x.id == key)!.title),
                     DropDown((state.presentations.value)[ "15.30" ].map(x => x.id), state.p4, "Vortrag 4 (15:30 - 15:50)").setValueRender(key => state.presentations.value[ "15.30" ].find(x => x.id == key)!.title),
                 ).setGap("20px").setMargin("20px 0px")
-            ),
+            )),
             PrimaryButton("Absenden").onPromiseClick(async () => {
                 const data = await validation.safeParseAsync(Object.fromEntries(Object.entries(state).map(([ key, state ]) => [ key, state.value ])))
                 if (!data.success)
@@ -81,9 +93,24 @@ appendBody(
                 else
                     alert("Abgesendet!")
             }),
+            Box(state.selected.map(x => x.length === 0 ? Empty() : Label("Meine Voträge").setTextSize("3xl").setFontWeight("bold"))).setMargin("20px").setJustifySelf("center"),
+            Table(state.selected, asRef({
+                title: {
+                    titleRenderer: () => Label("Vortrag"),
+                    columnWidth: "auto"
+                },
+                time: {
+                    titleRenderer: () => Label("Zeit"),
+                    columnWidth: "auto"
+                },
+                room: {
+                    titleRenderer: () => Label("Raum"),
+                    columnWidth: "auto"
+                },
+            }))
         )
-            .setPadding("250px 20px 20px")
-    )
+            .setPadding("200px 20px 20px"),
+    ).setJustifyItems("center")
 )
 
 checkLogin()
