@@ -25,8 +25,8 @@ async function loadData() {
         .then(x => {
             state.presentations.setValue(x.presentations)
             state.selected.setValue(x.selected.map((x, i) => ({
-                title: x.title,
                 time: [ "14:00", "14:30", "15:00", "15:30" ][ i ],
+                title: x.title,
                 room: x.room
             })))
         })
@@ -109,7 +109,7 @@ appendBody(
                 },
             }))
         )
-            .setPadding("200px 20px 20px"),
+            .setPadding("150px 20px 20px"),
     ).setJustifyItems("center")
 )
 
